@@ -25,11 +25,13 @@
 		const month = dateValues[1];
 		const year = dateValues[2];
 
-		const calculationText = document.getElementById("calculation")
-		const calculation = document.getElementById("calculation").value;
-		console.log(calculation);
+		const e = document.getElementById("calculation");
+		const calculation = e.value;
+		const calculationName = e.options[e.selectedIndex].text;
 
 		let url = "https://womeninstem.tk/api/calendar/" + calculation;
+		let newText = calculationName + ": "; 
+		let json;
 
 		switch (calculation) {
 			case "isLeapYear":
@@ -38,8 +40,8 @@
 			case "dayOfYear":
 				url += `/${month}/${day}/${year}`;
 				break;
-				url += `/${year}`;
 			case "firstDayOfYear":
+				url += `/${year}`;
 				break;
 			case "dayOfWeek":
 				url += `/${day}/${month}/${year}`;
@@ -54,7 +56,12 @@
 
 		fetch(url)
 			.then(response => response.json())
-			.then(result => document.getElementById("results").innerHTML = result)
+			.then(result => {
+				const key = Object.keys(result)[1];
+				console.log(key);
+				newText += result[key];
+				document.getElementById("results").innerHTML = newText;
+			})
 			.catch(error => console.log('error', error));
 	}
 </script>
