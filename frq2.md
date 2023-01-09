@@ -75,6 +75,9 @@ body {
 function getStepInfo() {
   const person_id = document.getElementById("person_id").value;
   const url = 'https://womeninstem.tk/api/person/' + person_id;
+  console.log(person_id);
+  console.log(url);
+  
   fetch(url)
     .then((response) => {
       response.json().then(info => {
@@ -97,8 +100,8 @@ function getStepInfo() {
 }
 
 function getActiveDays() {
-  const person_id = document.getElementById("person_id").value;
-  const url = 'https://womeninstem.tk/api/steps/stepsInfo/19' + person_id;
+  const person_id2 = document.getElementById("person_id2").value;
+  const url = 'https://womeninstem.tk/api/steps/stepsInfo/' + person_id2;
   fetch(url)
     .then((response) => {
       response.json().then(info => {
@@ -114,8 +117,9 @@ function getActiveDays() {
   
 
 function getAverageSteps() {
-  const person_id = document.getElementById("person_id").value;
-  const url = 'https://womeninstem.tk/api/steps/stepsInfo/19'+ person_id;
+  const person_id3 = document.getElementById("person_id3").value;
+  const url = 'https://womeninstem.tk/api/steps/stepsInfo/' + person_id3;
+  console.log(document.getElementById("person_id").value);
   fetch(url)
     .then((response) => {
       response.json().then(info => {
@@ -132,8 +136,8 @@ function getAverageSteps() {
 }
 
 function getAverageMood() {
-  const person_id = document.getElementById("person_id").value;
-  const url = 'https://womeninstem.tk/api/steps/stepsInfo/19'+ person_id;
+  const person_id4 = document.getElementById("person_id4").value;
+  const url = 'https://womeninstem.tk/api/steps/stepsInfo/'+ person_id4;
   fetch(url)
     .then((response) => {
       response.json().then(info => {
@@ -153,8 +157,8 @@ function getAverageMood() {
 }
 
 function getActiveCheck() {
-  const person_id = document.getElementById("person_id").value; 
-   const url = 'https://womeninstem.tk/api/steps/stepsInfo/19'+ person_id;
+  const person_id5 = document.getElementById("person_id5").value; 
+   const url = 'https://womeninstem.tk/api/steps/stepsInfo/'+ person_id5;
   fetch(url)
     .then((response) => {
       response.json().then(info => {
