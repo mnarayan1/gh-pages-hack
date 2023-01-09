@@ -8,24 +8,19 @@
       }
 body {
         background-color: #F0F8FF;
-        color: black;
       }
       h2 {
         background-color: #F0F8FF;
-        color: black;
       }
       p {
         background-color: #ffffcc;
-        color: black;
-      }
-      h1 {
-        color: black;
+		color: blue;
       }
 </style>
 <body style="background-color:#F0F8FF;">
 <div id="grad">
 <h1>Welcome to Step Tracker</h1>
-<p style="background-color:#b3c6ff;">Enter your id to view your step tracker info (Example try ID of 19)</p>
+<p style="background-color:#b3c6ff;">Enter your id to view your step tracker info</p>
 
 <form id="frm1" action="/action_page.php">
   ID: <input type="text" id="person_id" name="person_id"><br>
@@ -43,28 +38,28 @@ body {
 
 <p style="background-color:#b3c6ff;">Enter your id to view your active days</p>
 <form id="frm2" action="/action_page.php">
-  ID: <input type="text" id="person_id" name="person_id"><br>
+  ID: <input type="text" id="person_id2" name="person_id2"><br>
   <input type="button" onclick="getActiveDays()" value="Submit">
 </form>
 <p id = "active_days"></p>
 
 <p style="background-color:#b3c6ff;">Enter your id to view your average steps</p>
 <form id="frm3" action="/action_page.php">
-  ID: <input type="text" id="person_id" name="person_id"><br>
+  ID: <input type="text" id="person_id3" name="person_id3"><br>
   <input type="button" onclick="getAverageSteps()" value="Submit">
 </form>
 <p id = "average_steps"></p>
 
 <p style="background-color:#b3c6ff;">Enter your id to view your average mood</p>
 <form id="frm3" action="/action_page.php">
-  ID: <input type="text" id="person_id" name="person_id"><br>
+  ID: <input type="text" id="person_id4" name="person_id4"><br>
   <input type="button" onclick="getAverageMood()" value="Submit">
 </form>
 <p id = "average_mood"></p>
 
 <p style="background-color:#b3c6ff;">Enter your id to check if you have been active</p>
 <form id="frm4" action="/action_page.php">
-  ID: <input type="text" id="person_id" name="person_id"><br>
+  ID: <input type="text" id="person_id5" name="person_id5"><br>
   <input type="button" onclick="getActiveCheck()" value="Submit">
 </form>
 <p id = "average_check"></p>
