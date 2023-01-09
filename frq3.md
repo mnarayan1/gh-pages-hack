@@ -8,7 +8,7 @@ categories: [pbl]
 tags: [javascript, css. dom, getElementID]
 ---
 
-{% include home.html %}
+<!-- {% include home.html %} -->
 <!-- Hack 1: Test conditions on small and big numbers, report on findings -->
 <!-- Hack 2: Add a common math operation that is missing from calculator -->
 <!-- Hack 3: Implement 1 number operation (ie SQRT) -->
@@ -67,7 +67,6 @@ tags: [javascript, css. dom, getElementID]
 
 /* styling for the top bar which shows the results of the calculator */
 .calculator-output {
-    /* note how the output instead takes up 4 columns and 1 row; essentially takes up the entirety of the first row */
     grid-column: span 4;
     grid-row: span 1;
 
@@ -123,10 +122,6 @@ tags: [javascript, css. dom, getElementID]
     <div class="calculator-button" onclick="operation('Math.toDegrees')">Degrees</div>
     <div class="calculator-button" onclick="operation('Math.toRadians')">Radians</div>
     <div class="calculator-button" onclick="operation('=')">=</div>
-
-
-
-          
 
 </div>
 
