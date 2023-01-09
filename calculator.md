@@ -126,8 +126,7 @@ tags: [javascript, css. dom, getElementID]
 
 
 
-          
-
+    
 </div>
 
 
@@ -234,5 +233,3 @@ function clearCalc () { // clears calculator
     nextReady = true;
 }
 </script>
-
-</body>
