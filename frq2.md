@@ -18,6 +18,9 @@ body {
         background-color: #ffffcc;
         color: black;
       }
+      h1 {
+        color: black;
+      }
 </style>
 <body style="background-color:#F0F8FF;">
 <div id="grad">
