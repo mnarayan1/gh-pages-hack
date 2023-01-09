@@ -96,59 +96,81 @@ function getStepInfo() {
     });
 }
 
-
 function getActiveDays() {
   const person_id = document.getElementById("person_id").value;
-  const url = 'https://womeninstem.tk/api/steps/activeDays/19'
+  const url = 'https://womeninstem.tk/api/steps/stepsInfo/19' + person_id;
+  fetch(url)
+    .then((response) => {
+      response.json().then(info => {
+		document.getElementById("active_days").innerHTML = "Active Days: " + info.activeDays;
+	  
+	  	  });
+    })
   
-      var tmp = '{"name":   "joe", "activeDays":  3 }';
-	  var activeDayss = JSON.parse(tmp);
-	  document.getElementById("active_days").innerHTML = "Active Days: " + activeDayss.activeDays;
-	  console.log(response.json().toString());
-		
-	 
-   
+    .catch(function(error) {
+      console.log(error);
+    });
 }
+  
 
 function getAverageSteps() {
   const person_id = document.getElementById("person_id").value;
-  const url = 'https://womeninstem.tk/api/steps/activeDays/19'
+  const url = 'https://womeninstem.tk/api/steps/stepsInfo/19'+ person_id;
+  fetch(url)
+    .then((response) => {
+      response.json().then(info => {
+		document.getElementById("average_steps").innerHTML = "Average Steps: " + info.averageSteps;
+	  
+	  	  });
+    })
   
-      var tmp = '{"name":   "joe", "averageSteps":  1100 }';
-	  var averageStepss = JSON.parse(tmp);
-	  document.getElementById("average_steps").innerHTML = "Average Steps: " + averageStepss.averageSteps;
-	  console.log(response.json().toString());
-		
+    .catch(function(error) {
+      console.log(error);
+    });
 	 
    
 }
 
 function getAverageMood() {
   const person_id = document.getElementById("person_id").value;
-  const url = 'https://womeninstem.tk/api/steps/activeDays/19'
+  const url = 'https://womeninstem.tk/api/steps/stepsInfo/19'+ person_id;
+  fetch(url)
+    .then((response) => {
+      response.json().then(info => {
+		document.getElementById("average_mood").innerHTML = "Average Mood: " + info.averageMood;
+
+	  	  });
+    })
   
-      var tmp = '{"name":   "joe", "averageMood":  7.8 }';
-	  var averageMoodd = JSON.parse(tmp);
-	  document.getElementById("average_mood").innerHTML = "Average Mood: " + averageMoodd.averageMood;
-	  console.log(response.json().toString());
+    .catch(function(error) {
+      console.log(error);
+    });
+	 
+	  
 		
 	 
    
 }
 
 function getActiveCheck() {
-  const person_id = document.getElementById("person_id").value;
-  const url = 'https://womeninstem.tk/api/steps/activeDays/19'
+  const person_id = document.getElementById("person_id").value; 
+   const url = 'https://womeninstem.tk/api/steps/stepsInfo/19'+ person_id;
+  fetch(url)
+    .then((response) => {
+      response.json().then(info => {
+		document.getElementById("average_check").innerHTML = "Active Check: " + info.activeCheck;
+
+	  	  });
+    })
   
-      var tmp = '{"name":   "joe", "activeCheck":  "Good job, you met your average goal steps!" }';
-	  var activeCheckk = JSON.parse(tmp);
-	  document.getElementById("average_check").innerHTML = "Active Check: " + activeCheckk.activeCheck;
-	  console.log(response.json().toString());
+    .catch(function(error) {
+      console.log(error);
+    });
+	  
 		
 	 
    
 }
-
 </script>
 </div>
 </body>
