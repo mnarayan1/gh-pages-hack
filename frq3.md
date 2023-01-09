@@ -8,7 +8,7 @@ categories: [pbl]
 tags: [javascript, css. dom, getElementID]
 ---
 
-{% include nav_frontend.html %}
+{% include home.html %}
 <!-- Hack 1: Test conditions on small and big numbers, report on findings -->
 <!-- Hack 2: Add a common math operation that is missing from calculator -->
 <!-- Hack 3: Implement 1 number operation (ie SQRT) -->
