@@ -8,19 +8,24 @@
       }
 body {
         background-color: #F0F8FF;
+        color: black;
       }
       h2 {
         background-color: #F0F8FF;
+        color: black;
       }
       p {
         background-color: #ffffcc;
-		color: blue;
+        color: black;
+      }
+      h1 {
+        color: black;
       }
 </style>
 <body style="background-color:#F0F8FF;">
 <div id="grad">
 <h1>Welcome to Step Tracker</h1>
-<p style="background-color:#b3c6ff;">Enter your id to view your step tracker info</p>
+<p style="background-color:#b3c6ff;">Enter your id to view your step tracker info (Example try ID of 19)</p>
 
 <form id="frm1" action="/action_page.php">
   ID: <input type="text" id="person_id" name="person_id"><br>
@@ -38,28 +43,28 @@ body {
 
 <p style="background-color:#b3c6ff;">Enter your id to view your active days</p>
 <form id="frm2" action="/action_page.php">
-  ID: <input type="text" id="person_id2" name="person_id2"><br>
+  ID: <input type="text" id="person_id" name="person_id"><br>
   <input type="button" onclick="getActiveDays()" value="Submit">
 </form>
 <p id = "active_days"></p>
 
 <p style="background-color:#b3c6ff;">Enter your id to view your average steps</p>
 <form id="frm3" action="/action_page.php">
-  ID: <input type="text" id="person_id3" name="person_id3"><br>
+  ID: <input type="text" id="person_id" name="person_id"><br>
   <input type="button" onclick="getAverageSteps()" value="Submit">
 </form>
 <p id = "average_steps"></p>
 
 <p style="background-color:#b3c6ff;">Enter your id to view your average mood</p>
 <form id="frm3" action="/action_page.php">
-  ID: <input type="text" id="person_id4" name="person_id4"><br>
+  ID: <input type="text" id="person_id" name="person_id"><br>
   <input type="button" onclick="getAverageMood()" value="Submit">
 </form>
 <p id = "average_mood"></p>
 
 <p style="background-color:#b3c6ff;">Enter your id to check if you have been active</p>
 <form id="frm4" action="/action_page.php">
-  ID: <input type="text" id="person_id5" name="person_id5"><br>
+  ID: <input type="text" id="person_id" name="person_id"><br>
   <input type="button" onclick="getActiveCheck()" value="Submit">
 </form>
 <p id = "average_check"></p>
@@ -70,9 +75,6 @@ body {
 function getStepInfo() {
   const person_id = document.getElementById("person_id").value;
   const url = 'https://womeninstem.tk/api/person/' + person_id;
-  console.log(person_id);
-  console.log(url);
-  
   fetch(url)
     .then((response) => {
       response.json().then(info => {
@@ -94,82 +96,59 @@ function getStepInfo() {
     });
 }
 
+
 function getActiveDays() {
-  const person_id2 = document.getElementById("person_id2").value;
-  const url = 'https://womeninstem.tk/api/steps/stepsInfo/' + person_id2;
-  fetch(url)
-    .then((response) => {
-      response.json().then(info => {
-		document.getElementById("active_days").innerHTML = "Active Days: " + info.activeDays;
-	  
-	  	  });
-    })
+  const person_id = document.getElementById("person_id").value;
+  const url = 'https://womeninstem.tk/api/steps/activeDays/19'
   
-    .catch(function(error) {
-      console.log(error);
-    });
+      var tmp = '{"name":   "joe", "activeDays":  3 }';
+	  var activeDayss = JSON.parse(tmp);
+	  document.getElementById("active_days").innerHTML = "Active Days: " + activeDayss.activeDays;
+	  console.log(response.json().toString());
+		
+	 
+   
 }
-  
 
 function getAverageSteps() {
-  const person_id3 = document.getElementById("person_id3").value;
-  const url = 'https://womeninstem.tk/api/steps/stepsInfo/' + person_id3;
-  console.log(document.getElementById("person_id").value);
-  fetch(url)
-    .then((response) => {
-      response.json().then(info => {
-		document.getElementById("average_steps").innerHTML = "Average Steps: " + info.averageSteps;
-	  
-	  	  });
-    })
+  const person_id = document.getElementById("person_id").value;
+  const url = 'https://womeninstem.tk/api/steps/activeDays/19'
   
-    .catch(function(error) {
-      console.log(error);
-    });
+      var tmp = '{"name":   "joe", "averageSteps":  1100 }';
+	  var averageStepss = JSON.parse(tmp);
+	  document.getElementById("average_steps").innerHTML = "Average Steps: " + averageStepss.averageSteps;
+	  console.log(response.json().toString());
+		
 	 
    
 }
 
 function getAverageMood() {
-  const person_id4 = document.getElementById("person_id4").value;
-  const url = 'https://womeninstem.tk/api/steps/stepsInfo/'+ person_id4;
-  fetch(url)
-    .then((response) => {
-      response.json().then(info => {
-		document.getElementById("average_mood").innerHTML = "Average Mood: " + info.averageMood;
-
-	  	  });
-    })
+  const person_id = document.getElementById("person_id").value;
+  const url = 'https://womeninstem.tk/api/steps/activeDays/19'
   
-    .catch(function(error) {
-      console.log(error);
-    });
-	 
-	  
+      var tmp = '{"name":   "joe", "averageMood":  7.8 }';
+	  var averageMoodd = JSON.parse(tmp);
+	  document.getElementById("average_mood").innerHTML = "Average Mood: " + averageMoodd.averageMood;
+	  console.log(response.json().toString());
 		
 	 
    
 }
 
 function getActiveCheck() {
-  const person_id5 = document.getElementById("person_id5").value; 
-   const url = 'https://womeninstem.tk/api/steps/stepsInfo/'+ person_id5;
-  fetch(url)
-    .then((response) => {
-      response.json().then(info => {
-		document.getElementById("average_check").innerHTML = "Active Check: " + info.activeCheck;
-
-	  	  });
-    })
+  const person_id = document.getElementById("person_id").value;
+  const url = 'https://womeninstem.tk/api/steps/activeDays/19'
   
-    .catch(function(error) {
-      console.log(error);
-    });
-	  
+      var tmp = '{"name":   "joe", "activeCheck":  "Good job, you met your average goal steps!" }';
+	  var activeCheckk = JSON.parse(tmp);
+	  document.getElementById("average_check").innerHTML = "Active Check: " + activeCheckk.activeCheck;
+	  console.log(response.json().toString());
 		
 	 
    
 }
+
 </script>
 </div>
 </body>
